@@ -20,7 +20,7 @@ jobs:
            
        - name: Setup environment
          run: |
-           sudo apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison cpio
+           sudo apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison cpio
        
        - name: Downloading script from github repo
          run: |
