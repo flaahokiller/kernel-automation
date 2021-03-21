@@ -28,7 +28,7 @@ jobs:
            sudo -E apt-get clean
            
        - name: Setup environment
-         run; |
+         run: |
            sudo apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison cpio
        
        - name: Downloading script from github repo
