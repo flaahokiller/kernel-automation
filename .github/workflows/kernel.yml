@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
 
 env:
-  branch: "Q-rb"
-  username: "AtomicXZ"  
-  repo: "kernel_xiaomi_phoenix"
+  branch: "eleven"
+  username: "ItsVixano"  
+  repo: "android_kernel_xiaomi_ysl"
 
 jobs: 
   build:
