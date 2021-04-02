@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Automate Kernel building
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  branch: "eleven"
+  username: "ItsVixano"  
+  repo: "android_kernel_xiaomi_ysl"
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@master
+           
+       - name: Setup environment
+         run: |
+           sudo apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison cpio
+       
+       - name: Downloading script from github repo
+         run: |
+           wget https://raw.githubusercontent.com/$username/$repo/$branch/build.sh
+           bash build.sh
